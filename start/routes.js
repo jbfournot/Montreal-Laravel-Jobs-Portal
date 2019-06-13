@@ -14,6 +14,7 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
+
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.get('/', 'JobsController.index').as('jobs.index')
