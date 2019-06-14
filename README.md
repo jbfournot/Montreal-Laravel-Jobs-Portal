@@ -10,3 +10,9 @@
 - Création du [model Job](app/Models/Job.js) avec la commande `adonis make:model Job`
 - Création de [notre seeder](database/seeds/JobSeeder.js) et de [notre factory](database/factory.js) qui va créer pour nous 10 jobs
 - On lance le seed avec la commande `adonis seed`
+## Étape 4
+- Ajouter notre model au [controller JobsController](app/Controllers/Http/JobsController.js) et [modifier la vue](resources/views/jobs/index.edge) pour boucler sur les jobs proposéss
+- Ajouter [au model Job](app/Models/Job.js) le getter pour le champ created_at. Une instance de **momentjs** est retournée et on va pouvoir modifier le format de l'affichage.
+- Création de [notre commande](App/Commands/ImportIndeedJob.js) pour télécharger les jobs via l'API de Indeed. On lance la commande `adonis make:command ImportIndeedJobs`
+- On ajoute notre commande [au fichier de démarrage de l'application](/start/app.js)
+- Pour stocker la clef de l'API de Indeed, et sécuriser l'information, on place dans [les variables d'environnement](/.env) avec la clef **INDEED_PUBLISHER_KEY**

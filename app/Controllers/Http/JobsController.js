@@ -3,11 +3,14 @@
 /** @typedef {import('@adonisjs/framework/src/Request')} request */
 /** @typedef {import('@adonisjs/framework/src/View')} view */
 
+const Jobs = use('App/Models/Job');
+
 class JobsController {
 
     
     async index({request, view}){
-        return view.render('jobs.index');
+        let jobs = await Jobs.all();
+        return view.render('jobs.index', {jobs: jobs.toJSON()});
     }
 
 }
