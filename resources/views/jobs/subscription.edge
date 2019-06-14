@@ -1,0 +1,30 @@
+@layout('app')
+
+@section('content')
+<div class="container w-1/2 mx-auto pt-20 mt-5">
+    <div class="font-sans bg-white rounded-lg shadow-md p-10 text-center">
+        <h2 class="font-bold break-normal text-3xl">Subscribe to the newsletter</h2>
+        <h3 class="font-medium break-normal font-normal text-gray-600 text-base">Get the latest amazing jobs posted on Indeed right to your inbox</h3>
+            <div class="w-full text-center pt-4">
+                <form action="/subscription" method="POST">
+                    {{ csrfField() }}
+
+                    <div class="w-2/3 mx-auto flex flex-wrap items-center">
+                        <input name="email" type="email" placeholder="youremail@example.com" class="flex-1 mt-4 appearance-none font-medium border-2 border-teal-500 p-3 text-gray-600 focus:outline-none">
+                        <button type="submit" class="mt-4 appearance-none bg-teal-500 text-white text-base font-semibold uppercase py-3 px-5 border-2 border-teal-500 focus:outline-none">Subscribe</button>
+                    </div>
+
+                    @if(hasErrorFor('email'))
+                        <div class="my-5">
+                            <div class="p-2 bg-red-100 items-center text-red-400 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+                                <span class="flex rounded-full bg-red-500 text-white uppercase px-2 py-1 text-xs font-bold mr-3">Error</span>
+                                <span class="font-semibold mr-2 text-left flex-auto">{{ getErrorFor('email') }}</span>
+                            </div>
+                        </div>
+                    @endif
+
+                </form>
+        </div>
+    </div>
+</div>
+@endsection

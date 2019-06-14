@@ -17,4 +17,6 @@
 
 const Route = use('Route')
 
-Route.get('/', 'JobsController.index').as('jobs.index')
+Route.get('/', 'JobsController.index').as('jobs.index');
+Route.get('/subscription', 'JobsSubscriptionController.index').as('jobs.subscription');
+Route.post('/subscription', 'JobsSubscriptionController.store').validator('JobSubscription');

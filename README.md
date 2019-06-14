@@ -16,3 +16,10 @@
 - Création de [notre commande](App/Commands/ImportIndeedJob.js) pour télécharger les jobs via l'API de Indeed. On lance la commande `adonis make:command ImportIndeedJobs`
 - On ajoute notre commande [au fichier de démarrage de l'application](/start/app.js)
 - Pour stocker la clef de l'API de Indeed, et sécuriser l'information, on place dans [les variables d'environnement](/.env) avec la clef **INDEED_PUBLISHER_KEY**
+## Étape 5
+- Création du nouveau controller [JobsSubscriptionController](app/Controllers/Http/JobsSubscriptionController.js) et de [deux nouvelles routes](/start/routes.js)
+- Création de [la nouvelle vue](resources/views/jobs/subscription.edge) pour l'affichage du formulaire de connexion qui appellera la méthode **store** du contrôleur.
+- Modification du [layout principal](resources/views/app.edge) pour ajouter le menu de navigation avec le helper `route()`
+- Installation du package `adonis install @adonisjs/validator`pour la validation du formulaire et enregistrement dans les providers de notre application depuis le fichier [start/app.js](/start/app.js)
+- Création d'un Validator avec la commande `adonis make:validator JobSubscription`
+- On termine l'écriture de la méthode **store** dans notre controller [JobsSubscriptionController](app/Controllers/Http/JobsSubscriptionController.js) avec l'écriture en base de données et la redirection vers la page d'accueil
