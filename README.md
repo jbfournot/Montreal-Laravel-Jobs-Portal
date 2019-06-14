@@ -1,3 +1,6 @@
+# Fil de présentation du meetup
+Les étapes dans ce document correspondent aux différentes branches du projet. 
+
 ## Étape 1
 - Découverte de l'architecture du framework
 ## Étape 2
