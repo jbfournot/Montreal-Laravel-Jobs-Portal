@@ -23,3 +23,9 @@
 - Installation du package `adonis install @adonisjs/validator`pour la validation du formulaire et enregistrement dans les providers de notre application depuis le fichier [start/app.js](/start/app.js)
 - Création d'un Validator avec la commande `adonis make:validator JobSubscription`
 - On termine l'écriture de la méthode **store** dans notre controller [JobsSubscriptionController](app/Controllers/Http/JobsSubscriptionController.js) avec l'écriture en base de données et la redirection vers la page d'accueil
+## Étape 6
+- Installation de Mail Provider avec la commande `adonis install @adonisjs/mail` et enregistrement dans les providers de notre application depuis le fichier [start/app.js](/start/app.js)
+- Création de [notre commande](App/Commands/JobsNotification.js) pour envoyer les 3 derniers jobs disponibles par courriel aux membres. On lance la commande `adonis make:command JobsNotifications`
+- On ajoute notre commande [au fichier de démarrage de l'application](/start/app.js)
+- Création du [layout principale](resources/views/emails/app.edge) pour les courriels et du [layout pour les notifications](resources/views/emails/jobs/notification.edge)
+- Modification des variables dans [le fichier .env](.env) pour se connecter au SMTP de notre instance de maildev

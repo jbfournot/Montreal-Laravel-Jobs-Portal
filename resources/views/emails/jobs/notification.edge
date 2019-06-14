@@ -1,0 +1,11 @@
+@layout('emails.app')
+
+@section('content')
+    <h2 style="margin-bottom: 10px">Hi there,</h2>
+    <p>Get exclusive information about your next job with Laravel in Montreal</p>
+    @each(job in jobs)
+        <hr>
+        <h2 style="margin-bottom: 10px">{{ job.job_title }}</h2>
+        <p>{{{ job.job_description }}}</p>
+    @endeach
+@endsection
