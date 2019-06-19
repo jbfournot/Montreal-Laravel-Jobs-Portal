@@ -20,3 +20,7 @@ const Route = use('Route')
 Route.get('/', 'JobsController.index').as('jobs.index');
 Route.get('/subscription', 'JobsSubscriptionController.index').as('jobs.subscription');
 Route.post('/subscription', 'JobsSubscriptionController.store').validator('JobSubscription');
+
+Route.group(() => {
+    Route.get('/jobs', 'JobsController.index');
+}).prefix('api/v1').formats(['json']);
